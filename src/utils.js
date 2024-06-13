@@ -4,11 +4,7 @@
 export function pointsForWord(word) {
     let points = 0;
     for(const char of word) {
-        if (["a","b", "c", "d", "e"].includes(char)) {
-            points += 1;
-        } else {
-            points +=2;
-        }
+       points += /[aeiou]/i.test(char) ? 1 : 2;
     }
-    return points;
+    return points
 }
